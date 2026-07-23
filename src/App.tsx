@@ -57,10 +57,10 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-300 font-sans selection:bg-indigo-500 selection:text-white ${
+      className={`min-h-screen transition-colors duration-300 font-sans selection:bg-[#B87333] selection:text-white dark:selection:bg-[#B87333] light:selection:bg-[#4F83CC] light:selection:text-white ${
         isDarkMode
-          ? 'bg-slate-950 text-slate-100'
-          : 'bg-slate-50 text-slate-900'
+          ? 'bg-[#111111] text-[#FAFAFA]'
+          : 'bg-[#FFFFFF] text-[#374151]'
       }`}
     >
       {/* Sticky Navigation */}

@@ -34,22 +34,28 @@ export const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
           <div className="lg:col-span-7 text-left space-y-6">
             
             {/* Status / Welcome Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide glass-card border border-indigo-500/30 text-indigo-400 light:text-indigo-600 shadow-sm">
+            <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide glass-card border shadow-sm ${
+              isDarkMode
+                ? 'border-[#B87333]/30 text-[#B87333]'
+                : 'border-[#4F83CC]/30 text-[#4F83CC]'
+            }`}>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               Available for Freelance & Full-time Roles
-              <Sparkles className="w-3.5 h-3.5 text-indigo-400 ml-1" />
+              <Sparkles className={`w-3.5 h-3.5 ml-1 ${
+                isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+              }`} />
             </div>
 
             {/* Name Heading */}
             <div className="space-y-2">
               <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight ${
-                isDarkMode ? 'text-white' : 'text-slate-900'
+                isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
               }`}>
                 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>
                   {PERSONAL_INFO.name}
                 </span>
               </h1>
@@ -58,11 +64,15 @@ export const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
               <div className="flex flex-wrap items-center gap-2 pt-1 text-sm sm:text-base font-semibold">
                 {PERSONAL_INFO.titles.map((title, index) => (
                   <React.Fragment key={title}>
-                    <span className="px-3 py-1 rounded-lg glass-card border border-slate-700/50 light:border-slate-300 text-indigo-300 light:text-indigo-700 font-medium">
+                    <span className={`px-3 py-1 rounded-lg glass-card border font-medium ${
+                      isDarkMode
+                        ? 'border-[#2F2F2F] text-[#D8D8D8]'
+                        : 'border-[#D1D5DB] text-[#374151]'
+                    }`}>
                       {title}
                     </span>
                     {index < PERSONAL_INFO.titles.length - 1 && (
-                      <span className="text-slate-600 dark:text-slate-600">•</span>
+                      <span className={isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}>•</span>
                     )}
                   </React.Fragment>
                 ))}
@@ -71,7 +81,7 @@ export const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
 
             {/* Short Introduction */}
             <p className={`text-base sm:text-lg leading-relaxed max-w-2xl font-normal ${
-              isDarkMode ? 'text-slate-300' : 'text-slate-700'
+              isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'
             }`}>
               {PERSONAL_INFO.introduction}
             </p>
@@ -80,38 +90,44 @@ export const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 onClick={() => scrollToSection('#projects')}
-                className="px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 group cursor-pointer"
+                className={`px-7 py-3.5 rounded-xl font-bold text-sm text-white hover:opacity-95 shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 group cursor-pointer ${
+                  isDarkMode
+                    ? 'bg-[#B87333] shadow-[#B87333]/20'
+                    : 'bg-[#4F83CC] shadow-[#4F83CC]/20'
+                }`}
               >
                 View My Projects
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform text-white" />
               </button>
 
               <button
                 onClick={() => scrollToSection('#contact')}
                 className={`px-7 py-3.5 rounded-xl font-bold text-sm border transition-all duration-200 flex items-center gap-2 hover:-translate-y-0.5 cursor-pointer ${
                   isDarkMode
-                    ? 'bg-slate-900/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-slate-600 shadow-md'
-                    : 'bg-white border-slate-300 text-slate-800 hover:bg-slate-50 hover:border-slate-400 shadow-md'
+                    ? 'bg-[#1F1F1F] border-[#2F2F2F] text-[#D8D8D8] hover:bg-[#2F2F2F] hover:border-[#B87333]/40 shadow-md'
+                    : 'bg-[#FFFFFF] border-[#D1D5DB] text-[#374151] hover:bg-[#F5F5F5] hover:border-[#4F83CC]/40 shadow-md'
                 }`}
               >
-                <Mail className="w-4 h-4 text-indigo-500" />
+                <Mail className={`w-4 h-4 ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`} />
                 Contact Me
               </button>
             </div>
 
             {/* Quick Specs Bar */}
-            <div className="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/60 light:border-slate-200">
+            <div className={`pt-6 grid grid-cols-3 gap-4 border-t ${
+              isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'
+            }`}>
               <div>
-                <p className="text-xl sm:text-2xl font-bold text-indigo-400">4+ Yrs</p>
-                <p className="text-xs text-slate-400 light:text-slate-600">Experience</p>
+                <p className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`}>4+ Yrs</p>
+                <p className={`text-xs ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>Experience</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold text-purple-400">8+ Live</p>
-                <p className="text-xs text-slate-400 light:text-slate-600">WordPress Sites</p>
+                <p className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}`}>8+ Live</p>
+                <p className={`text-xs ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>WordPress Sites</p>
               </div>
               <div>
-                <p className="text-xl sm:text-2xl font-bold text-pink-400">4+ Custom</p>
-                <p className="text-xs text-slate-400 light:text-slate-600">PHP Systems</p>
+                <p className={`text-xl sm:text-2xl font-bold ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`}>4+ Custom</p>
+                <p className={`text-xs ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>PHP Systems</p>
               </div>
             </div>
           </div>
@@ -121,53 +137,63 @@ export const Hero: React.FC<HeroProps> = ({ isDarkMode }) => {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               
               {/* Outer Glow frame */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl blur-xl opacity-30 animate-pulse" />
+              <div className={`absolute -inset-1 rounded-3xl blur-xl opacity-25 animate-pulse ${
+                isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+              }`} />
 
               {/* Main Visual Glassmorphism Box */}
               <div className={`relative p-6 sm:p-8 rounded-2xl glass-card shadow-2xl space-y-6 ${
-                isDarkMode ? 'bg-slate-900/90 border-slate-800' : 'bg-white/90 border-slate-200'
+                isDarkMode ? 'bg-[#1F1F1F] border-[#2F2F2F]' : 'bg-[#F5F5F5] border-[#D1D5DB]'
               }`}>
                 {/* Code Header Bar */}
-                <div className="flex items-center justify-between pb-4 border-b border-slate-800 light:border-slate-200">
+                <div className={`flex items-center justify-between pb-4 border-b ${
+                  isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'
+                }`}>
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                     <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                     <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                   </div>
-                  <span className="text-xs font-mono text-slate-400">developer.config.php</span>
+                  <span className={`text-xs font-mono ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`}>developer.config.php</span>
                 </div>
 
                 {/* Developer Spec Snippet */}
                 <div className="space-y-3 font-mono text-xs sm:text-sm">
-                  <div className="text-indigo-400">
-                    <span className="text-purple-400">class</span> <span className="text-amber-300">FullStackDeveloper</span> &#123;
+                  <div className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>
+                    <span>class</span> <span className={isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}>FullStackDeveloper</span> &#123;
                   </div>
-                  <div className="pl-4 space-y-1 text-slate-300 light:text-slate-700">
-                    <p><span className="text-indigo-400">public</span> $name = <span className="text-emerald-400">'Jhon Rey A. Ebro'</span>;</p>
-                    <p><span className="text-indigo-400">public</span> $core = [<span className="text-emerald-400">'WordPress'</span>, <span className="text-emerald-400">'PHP'</span>, <span className="text-emerald-400">'MySQL'</span>, <span className="text-emerald-400">'JS'</span>];</p>
-                    <p><span className="text-indigo-400">public</span> $location = <span className="text-emerald-400">'Quezon City, PH'</span>;</p>
-                    <p><span className="text-indigo-400">public</span> $status = <span className="text-emerald-400">'Ready to Build'</span>;</p>
+                  <div className={`pl-4 space-y-1 ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>
+                    <p><span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>public</span> $name = <span className="text-emerald-500">'Jhon Rey A. Ebro'</span>;</p>
+                    <p><span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>public</span> $core = [<span className="text-emerald-500">'WordPress'</span>, <span className="text-emerald-500">'PHP'</span>, <span className="text-emerald-500">'MySQL'</span>, <span className="text-emerald-500">'JS'</span>];</p>
+                    <p><span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>public</span> $location = <span className="text-emerald-500">'Quezon City, PH'</span>;</p>
+                    <p><span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>public</span> $status = <span className="text-emerald-500">'Ready to Build'</span>;</p>
                   </div>
-                  <div className="text-indigo-400">&#125;</div>
+                  <div className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>&#125;</div>
                 </div>
 
                 {/* Micro Tech Icons */}
                 <div className="pt-4 grid grid-cols-4 gap-2">
-                  <div className="p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 text-indigo-400 hover:scale-105 transition-transform">
+                  <div className={`p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 hover:scale-105 transition-transform ${
+                    isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  }`}>
                     <Globe className="w-5 h-5" />
-                    <span className="text-[10px] font-semibold">WordPress</span>
+                    <span className={`text-[10px] font-semibold ${isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}`}>WordPress</span>
                   </div>
-                  <div className="p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 text-purple-400 hover:scale-105 transition-transform">
+                  <div className={`p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 hover:scale-105 transition-transform ${
+                    isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'
+                  }`}>
                     <Code className="w-5 h-5" />
-                    <span className="text-[10px] font-semibold">PHP</span>
+                    <span className={`text-[10px] font-semibold ${isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}`}>PHP</span>
                   </div>
-                  <div className="p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 text-blue-400 hover:scale-105 transition-transform">
+                  <div className={`p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 hover:scale-105 transition-transform ${
+                    isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  }`}>
                     <Database className="w-5 h-5" />
-                    <span className="text-[10px] font-semibold">MySQL</span>
+                    <span className={`text-[10px] font-semibold ${isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}`}>MySQL</span>
                   </div>
-                  <div className="p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 text-emerald-400 hover:scale-105 transition-transform">
+                  <div className="p-3 rounded-xl glass-card flex flex-col items-center justify-center gap-1 text-emerald-500 hover:scale-105 transition-transform">
                     <ShieldCheck className="w-5 h-5" />
-                    <span className="text-[10px] font-semibold">Clean Code</span>
+                    <span className={`text-[10px] font-semibold ${isDarkMode ? 'text-[#D8D8D8]' : 'text-[#374151]'}`}>Clean Code</span>
                   </div>
                 </div>
               </div>

@@ -6,13 +6,6 @@ interface StatsProps {
   isDarkMode: boolean;
 }
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  Globe: <Globe className="w-6 h-6 text-indigo-400" />,
-  Cpu: <Cpu className="w-6 h-6 text-purple-400" />,
-  Briefcase: <Briefcase className="w-6 h-6 text-pink-400" />,
-  CheckCircle2: <CheckCircle2 className="w-6 h-6 text-emerald-400" />,
-};
-
 export const Stats: React.FC<StatsProps> = ({ isDarkMode }) => {
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
 
@@ -38,27 +31,46 @@ export const Stats: React.FC<StatsProps> = ({ isDarkMode }) => {
     return () => clearInterval(timer);
   }, []);
 
+  const getIcon = (iconName: string) => {
+    const colorClass = isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]';
+    switch (iconName) {
+      case 'Globe': return <Globe className={`w-6 h-6 ${colorClass}`} />;
+      case 'Cpu': return <Cpu className={`w-6 h-6 ${colorClass}`} />;
+      case 'Briefcase': return <Briefcase className={`w-6 h-6 ${colorClass}`} />;
+      case 'CheckCircle2': return <CheckCircle2 className={`w-6 h-6 ${colorClass}`} />;
+      default: return <Globe className={`w-6 h-6 ${colorClass}`} />;
+    }
+  };
+
   return (
-    <section className="py-20 relative overflow-hidden bg-slate-900/40 light:bg-slate-50 border-y border-slate-800/80 light:border-slate-200">
+    <section className={`py-20 relative overflow-hidden border-y ${
+      isDarkMode
+        ? 'bg-[#111111] border-[#2F2F2F]'
+        : 'bg-[#F5F5F5] border-[#D1D5DB]'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {STATS.map((stat, idx) => (
             <div
               key={stat.label}
               className={`p-6 rounded-2xl glass-card border flex flex-col items-center text-center space-y-3 transition-transform hover:-translate-y-1 ${
-                isDarkMode ? 'bg-slate-900/80 border-slate-800' : 'bg-white/80 border-slate-200'
+                isDarkMode ? 'bg-[#1F1F1F] border-[#2F2F2F]' : 'bg-[#FFFFFF] border-[#D1D5DB]'
               }`}
             >
-              <div className="p-3 rounded-2xl bg-indigo-500/10 text-indigo-400 shadow-inner">
-                {ICON_MAP[stat.iconName] || <Globe className="w-6 h-6 text-indigo-400" />}
+              <div className={`p-3 rounded-2xl ${
+                isDarkMode ? 'bg-[#111111]' : 'bg-[#F5F5F5]'
+              }`}>
+                {getIcon(stat.iconName)}
               </div>
 
-              <div className="text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent font-mono">
+              <div className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-mono ${
+                isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+              }`}>
                 {counts[idx]}
                 {stat.suffix}
               </div>
 
-              <p className={`text-xs sm:text-sm font-semibold ${isDarkMode ? 'text-slate-300' : 'text-slate-700'}`}>
+              <p className={`text-xs sm:text-sm font-semibold ${isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'}`}>
                 {stat.label}
               </p>
             </div>
