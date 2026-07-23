@@ -37,29 +37,27 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
 
   return (
     <section id="skills" className={`py-24 relative overflow-hidden ${
-      isDarkMode ? 'bg-[#111111]' : 'bg-[#FFFFFF]'
+      isDarkMode ? 'bg-[#0F0F10]' : 'bg-[#FCFBF8]'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase glass-card border ${
-            isDarkMode ? 'text-[#D51C29] border-[#4E494A]' : 'text-[#E63946] border-[#E8E8E8]'
+            isDarkMode ? 'text-[#C8A96A] border-[#2B2B30]' : 'text-[#C8A96A] border-[#E6E2DA]'
           }`}>
             <Code className="w-3.5 h-3.5" />
             Technical Expertise
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-            isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
+            isDarkMode ? 'text-[#F5F5F2]' : 'text-[#2B2B2E]'
           }`}>
-            Skills & <span className={isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}>Technologies</span>
+            Skills & <span className="text-[#C8A96A]">Technologies</span>
           </h2>
-          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>
+          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#9A9A9A]' : 'text-[#666666]'}`}>
             A comprehensive set of tools, languages, and platforms I utilize to build modern digital solutions.
           </p>
-          <div className={`w-16 h-1 mx-auto rounded-full ${
-            isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
-          }`} />
+          <div className="w-16 h-1 mx-auto rounded-full bg-[#C8A96A]" />
         </div>
 
         {/* Filter Pills */}
@@ -68,12 +66,10 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
             onClick={() => setSelectedFilter('All')}
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
               selectedFilter === 'All'
-                ? isDarkMode
-                  ? 'bg-[#A41521] text-white shadow-lg shadow-[#A41521]/20'
-                  : 'bg-[#E63946] text-white shadow-lg shadow-[#E63946]/20'
+                ? 'bg-[#C8A96A] text-[#0F0F10] shadow-lg shadow-[#C8A96A]/20'
                 : isDarkMode
-                ? 'bg-[#2A2324] border border-[#4E494A] text-[#F4EDED] hover:text-white hover:bg-[#5A121D]/40'
-                : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#FFFFFF]'
+                ? 'bg-[#1A1A1D] border border-[#2B2B30] text-[#F5F5F2] hover:bg-[#0F0F10]'
+                : 'bg-[#F5F3EF] border border-[#E6E2DA] text-[#2B2B2E] hover:bg-[#FCFBF8]'
             }`}
           >
             All Categories
@@ -84,12 +80,10 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               onClick={() => setSelectedFilter(cat.title)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                 selectedFilter === cat.title
-                  ? isDarkMode
-                    ? 'bg-[#A41521] text-white shadow-lg shadow-[#A41521]/20'
-                    : 'bg-[#E63946] text-white shadow-lg shadow-[#E63946]/20'
+                  ? 'bg-[#C8A96A] text-[#0F0F10] shadow-lg shadow-[#C8A96A]/20'
                   : isDarkMode
-                  ? 'bg-[#2A2324] border border-[#4E494A] text-[#F4EDED] hover:text-white hover:bg-[#5A121D]/40'
-                  : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#FFFFFF]'
+                  ? 'bg-[#1A1A1D] border border-[#2B2B30] text-[#F5F5F2] hover:bg-[#0F0F10]'
+                  : 'bg-[#F5F3EF] border border-[#E6E2DA] text-[#2B2B2E] hover:bg-[#FCFBF8]'
               }`}
             >
               {cat.title}
@@ -104,21 +98,21 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               key={cat.title}
               className={`p-6 rounded-2xl glass-card border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between group ${
                 isDarkMode
-                  ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/50'
-                  : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/50'
+                  ? 'bg-[#1A1A1D] border-[#2B2B30] hover:border-[#C8A96A]/50'
+                  : 'bg-[#F5F3EF] border-[#E6E2DA] hover:border-[#C8A96A]/50'
               }`}
             >
               <div className="space-y-4">
                 {/* Category Header */}
                 <div className={`flex items-center gap-3 pb-3 border-b ${
-                  isDarkMode ? 'border-[#4E494A]' : 'border-[#E8E8E8]'
+                  isDarkMode ? 'border-[#2B2B30]' : 'border-[#E6E2DA]'
                 }`}>
                   <div className={`p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300 ${
-                    isDarkMode ? 'bg-[#111111] text-[#D51C29]' : 'bg-[#F8F8F8] text-[#E63946]'
+                    isDarkMode ? 'bg-[#0F0F10] text-[#C8A96A]' : 'bg-[#FCFBF8] text-[#C8A96A]'
                   }`}>
                     {ICON_MAP[cat.iconName] || <Code className="w-5 h-5" />}
                   </div>
-                  <h3 className={`font-bold text-base ${isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}`}>
+                  <h3 className={`font-bold text-base ${isDarkMode ? 'text-[#F5F5F2]' : 'text-[#2B2B2E]'}`}>
                     {cat.title}
                   </h3>
                 </div>
@@ -130,13 +124,11 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                       key={skill}
                       className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-default group/badge hover:scale-105 shadow-sm ${
                         isDarkMode
-                          ? 'bg-[#111111] border border-[#4E494A] text-[#F4EDED] hover:border-[#D51C29]/60 hover:text-white'
-                          : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:border-[#E63946]/60 hover:text-[#E63946]'
+                          ? 'bg-[#0F0F10] border border-[#2B2B30] text-[#F5F5F2] hover:border-[#C8A96A]/60'
+                          : 'bg-[#FCFBF8] border border-[#E6E2DA] text-[#2B2B2E] hover:border-[#C8A96A]/60'
                       }`}
                     >
-                      <Check className={`w-3 h-3 group-hover/badge:scale-125 transition-transform ${
-                        isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
-                      }`} />
+                      <Check className="w-3 h-3 group-hover/badge:scale-125 transition-transform text-[#C8A96A]" />
                       <span>{skill}</span>
                     </div>
                   ))}
@@ -144,10 +136,10 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               </div>
 
               <div className={`mt-6 pt-3 border-t text-[10px] flex justify-between items-center font-mono ${
-                isDarkMode ? 'border-[#4E494A] text-[#A35B62]' : 'border-[#E8E8E8] text-[#5F6368]'
+                isDarkMode ? 'border-[#2B2B30] text-[#9A9A9A]' : 'border-[#E6E2DA] text-[#8E8E8E]'
               }`}>
                 <span>{cat.skills.length} skills</span>
-                <span className={`font-bold ${isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}`}>• Verified</span>
+                <span className="font-bold text-[#C8A96A]">• Verified</span>
               </div>
             </div>
           ))}

@@ -14,35 +14,33 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
 
   return (
     <Section3DWrapper className={`py-12 border-t relative transition-colors ${
-      isDarkMode ? 'bg-[#111111] border-[#4E494A] text-[#A35B62]' : 'bg-[#F8F8F8] border-[#E8E8E8] text-[#5F6368]'
+      isDarkMode ? 'bg-[#0F0F10] border-[#2B2B30] text-[#9A9A9A]' : 'bg-[#FCFBF8] border-[#E6E2DA] text-[#666666]'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Left Brand */}
           <div className="flex items-center gap-3">
-            <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs ${
-              isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
-            }`}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-[#0F0F10] bg-[#C8A96A] font-bold text-xs">
               <Code2 className="w-4 h-4" />
             </div>
             <div>
-              <p className={`font-bold text-base ${isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}`}>
+              <p className={`font-bold text-base ${isDarkMode ? 'text-[#F5F5F2]' : 'text-[#2B2B2E]'}`}>
                 {PERSONAL_INFO.name}
               </p>
-              <p className={`text-xs ${isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}`}>Full Stack & WordPress Developer</p>
+              <p className="text-xs text-[#C8A96A]">Full Stack & WordPress Developer</p>
             </div>
           </div>
 
           {/* Center Attribution & Copyright */}
           <div className="text-center text-xs space-y-1">
-            <p className={isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}>
+            <p className={isDarkMode ? 'text-[#F5F5F2]' : 'text-[#2B2B2E]'}>
               Designed & Developed by{' '}
-              <span className={`font-bold ${isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}`}>
+              <span className={`font-bold ${isDarkMode ? 'text-[#F5F5F2]' : 'text-[#2B2B2E]'}`}>
                 {PERSONAL_INFO.name}
               </span>
             </p>
-            <p className={`font-mono ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>
+            <p className={`font-mono ${isDarkMode ? 'text-[#9A9A9A]' : 'text-[#8E8E8E]'}`}>
               Copyright © 2026. All Rights Reserved.
             </p>
           </div>
@@ -52,8 +50,8 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
             onClick={scrollToTop}
             className={`p-3 rounded-2xl border transition-all hover:scale-110 cursor-pointer flex items-center gap-2 text-xs font-bold ${
               isDarkMode
-                ? 'bg-[#2A2324] border-[#4E494A] text-[#D51C29] hover:bg-[#4E494A] hover:text-[#F4EDED]'
-                : 'bg-[#FFFFFF] border-[#E8E8E8] text-[#E63946] hover:bg-[#F8F8F8] shadow-sm'
+                ? 'bg-[#1A1A1D] border-[#2B2B30] text-[#C8A96A] hover:bg-[#2B2B30] hover:text-[#F5F5F2]'
+                : 'bg-[#F5F3EF] border-[#E6E2DA] text-[#2B2B2E] hover:bg-[#FCFBF8] shadow-sm'
             }`}
             aria-label="Back to top"
           >

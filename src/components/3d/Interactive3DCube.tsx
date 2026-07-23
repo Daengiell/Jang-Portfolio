@@ -28,19 +28,19 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
 
   // Define 3D vertices with developer skill labels
   const baseVertices: Point3D[] = [
-    { x: -100, y: -100, z: -100, label: 'WordPress', color: '#E63946' },
-    { x: 100, y: -100, z: -100, label: 'PHP 8+', color: '#D51C29' },
-    { x: 100, y: 100, z: -100, label: 'MySQL', color: '#A41521' },
-    { x: -100, y: 100, z: -100, label: 'JavaScript', color: '#F4EDED' },
+    { x: -100, y: -100, z: -100, label: 'WordPress', color: '#C8A96A' },
+    { x: 100, y: -100, z: -100, label: 'PHP 8+', color: '#C8A96A' },
+    { x: 100, y: 100, z: -100, label: 'MySQL', color: '#E8D9B5' },
+    { x: -100, y: 100, z: -100, label: 'JavaScript', color: '#F5F5F2' },
     { x: -100, y: -100, z: 100, label: 'React.js', color: '#61DAFB' },
-    { x: 100, y: -100, z: 100, label: 'REST APIs', color: '#E63946' },
+    { x: 100, y: -100, z: 100, label: 'REST APIs', color: '#C8A96A' },
     { x: 100, y: 100, z: 100, label: 'Tailwind CSS', color: '#38BDF8' },
     { x: -100, y: 100, z: 100, label: 'Git & Linux', color: '#10B981' },
     // Inner core vertices
-    { x: 0, y: -140, z: 0, label: 'Full Stack', color: '#E63946' },
-    { x: 0, y: 140, z: 0, label: 'Security', color: '#A41521' },
-    { x: 140, y: 0, z: 0, label: 'Custom Systems', color: '#D51C29' },
-    { x: -140, y: 0, z: 0, label: 'Optimization', color: '#F4EDED' },
+    { x: 0, y: -140, z: 0, label: 'Full Stack', color: '#C8A96A' },
+    { x: 0, y: 140, z: 0, label: 'Security', color: '#E8D9B5' },
+    { x: 140, y: 0, z: 0, label: 'Custom Systems', color: '#C8A96A' },
+    { x: -140, y: 0, z: 0, label: 'Optimization', color: '#F5F5F2' },
   ];
 
   // Cube edges connecting indices
@@ -151,9 +151,9 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
         const alpha = Math.max(0.15, Math.min(0.85, (avgZ + 250) / 500));
 
         const gradient = ctx.createLinearGradient(p1.x, p1.y, p2.x, p2.y);
-        const primaryRed = isDarkMode ? 'rgba(213, 28, 41,' : 'rgba(230, 57, 70,';
-        gradient.addColorStop(0, `${primaryRed}${alpha})`);
-        gradient.addColorStop(1, isDarkMode ? `rgba(78, 73, 74, ${alpha * 0.5})` : `rgba(232, 232, 232, ${alpha * 0.5})`);
+        const primaryGold = 'rgba(200, 169, 106,';
+        gradient.addColorStop(0, `${primaryGold}${alpha})`);
+        gradient.addColorStop(1, isDarkMode ? `rgba(43, 43, 48, ${alpha * 0.5})` : `rgba(230, 226, 218, ${alpha * 0.5})`);
 
         ctx.strokeStyle = gradient;
         ctx.beginPath();
@@ -186,17 +186,17 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
         ctx.beginPath();
         ctx.arc(p.x, p.y, isHovered ? radius * 2 : radius * 1.4, 0, Math.PI * 2);
         ctx.fillStyle = isHovered
-          ? (isDarkMode ? 'rgba(213, 28, 41, 0.4)' : 'rgba(230, 57, 70, 0.4)')
-          : (isDarkMode ? 'rgba(164, 21, 33, 0.2)' : 'rgba(255, 214, 219, 0.4)');
+          ? 'rgba(200, 169, 106, 0.4)'
+          : 'rgba(232, 217, 181, 0.2)';
         ctx.fill();
 
         // Core Node Circle
         ctx.beginPath();
         ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
         ctx.fillStyle = isHovered
-          ? (isDarkMode ? '#D51C29' : '#E63946')
-          : (p.orig.color || (isDarkMode ? '#F4EDED' : '#1A1A1A'));
-        ctx.shadowColor = isDarkMode ? '#D51C29' : '#E63946';
+          ? '#C8A96A'
+          : (p.orig.color || (isDarkMode ? '#F5F5F2' : '#2B2B2E'));
+        ctx.shadowColor = '#C8A96A';
         ctx.shadowBlur = isHovered ? 15 : 6;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -205,8 +205,8 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
         if (p.orig.label) {
           ctx.font = `${isHovered ? 'bold 12px' : '10px'} 'JetBrains Mono', monospace`;
           ctx.fillStyle = isHovered
-            ? (isDarkMode ? '#FFFFFF' : '#1A1A1A')
-            : (isDarkMode ? `rgba(244, 237, 237, ${depthAlpha})` : `rgba(30, 30, 30, ${depthAlpha})`);
+            ? (isDarkMode ? '#F5F5F2' : '#2B2B2E')
+            : (isDarkMode ? `rgba(245, 245, 242, ${depthAlpha})` : `rgba(43, 43, 46, ${depthAlpha})`);
           ctx.textAlign = 'center';
           ctx.fillText(p.orig.label, p.x, p.y - radius - 6);
         }
@@ -271,8 +271,8 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
         <div className={`px-3 py-1.5 rounded-full text-xs font-bold font-mono border flex items-center gap-1.5 pointer-events-auto ${
           isDarkMode
-            ? 'bg-[#111111]/80 border-[#4E494A] text-[#D51C29]'
-            : 'bg-[#FFFFFF]/80 border-[#E8E8E8] text-[#E63946]'
+            ? 'bg-[#0F0F10]/80 border-[#2B2B30] text-[#C8A96A]'
+            : 'bg-[#FCFBF8]/80 border-[#E6E2DA] text-[#C8A96A]'
         }`}>
           <Rotate3d className="w-3.5 h-3.5 animate-spin-slow" />
           <span>Interactive 3D Tech Cube</span>
@@ -282,8 +282,8 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
           onClick={() => setAutoRotate(!autoRotate)}
           className={`p-2 rounded-full border transition-all cursor-pointer pointer-events-auto ${
             autoRotate
-              ? (isDarkMode ? 'bg-[#A41521] text-white border-[#D51C29]' : 'bg-[#E63946] text-white border-[#E63946]')
-              : (isDarkMode ? 'bg-[#2A2324] text-[#A35B62] border-[#4E494A]' : 'bg-[#FFFFFF] text-[#5F6368] border-[#E8E8E8]')
+              ? 'bg-[#C8A96A] text-[#0F0F10] border-[#C8A96A]'
+              : (isDarkMode ? 'bg-[#1A1A1D] text-[#9A9A9A] border-[#2B2B30]' : 'bg-[#F5F3EF] text-[#666666] border-[#E6E2DA]')
           }`}
           title={autoRotate ? 'Pause Auto Rotation' : 'Enable Auto Rotation'}
         >
@@ -294,21 +294,21 @@ export const Interactive3DCube: React.FC<Interactive3DCubeProps> = ({
       {/* Bottom Node Inspector Bar */}
       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs font-mono pointer-events-none">
         <span className={`px-3 py-1 rounded-lg border ${
-          isDarkMode ? 'bg-[#111111]/80 border-[#4E494A] text-[#A35B62]' : 'bg-[#FFFFFF]/80 border-[#E8E8E8] text-[#5F6368]'
+          isDarkMode ? 'bg-[#0F0F10]/80 border-[#2B2B30] text-[#9A9A9A]' : 'bg-[#FCFBF8]/80 border-[#E6E2DA] text-[#666666]'
         }`}>
           Drag cursor to rotate in 3D
         </span>
 
         {hoveredNode ? (
           <span className={`px-3 py-1 rounded-lg border font-bold animate-pulse ${
-            isDarkMode ? 'bg-[#A41521]/30 border-[#D51C29] text-[#F4EDED]' : 'bg-[#FFD6DB] border-[#E63946] text-[#1A1A1A]'
+            isDarkMode ? 'bg-[#C8A96A]/20 border-[#C8A96A] text-[#F5F5F2]' : 'bg-[#E8D9B5] border-[#C8A96A] text-[#2B2B2E]'
           }`}>
             <Sparkles className="w-3 h-3 inline mr-1" />
             {hoveredNode}
           </span>
         ) : (
           <span className={`px-3 py-1 rounded-lg border ${
-            isDarkMode ? 'bg-[#111111]/80 border-[#4E494A] text-[#D51C29]' : 'bg-[#FFFFFF]/80 border-[#E8E8E8] text-[#E63946]'
+            isDarkMode ? 'bg-[#0F0F10]/80 border-[#2B2B30] text-[#C8A96A]' : 'bg-[#FCFBF8]/80 border-[#E6E2DA] text-[#C8A96A]'
           }`}>
             Hover vertices to inspect
           </span>
