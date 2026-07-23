@@ -44,21 +44,21 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase glass-card border ${
-            isDarkMode ? 'text-[#B87333] border-[#B87333]/30' : 'text-[#4F83CC] border-[#4F83CC]/30'
+            isDarkMode ? 'text-[#D51C29] border-[#4E494A]' : 'text-[#E63946] border-[#E8E8E8]'
           }`}>
             <Code className="w-3.5 h-3.5" />
             Technical Expertise
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-            isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
+            isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
           }`}>
-            Skills & <span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>Technologies</span>
+            Skills & <span className={isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}>Technologies</span>
           </h2>
-          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>
+          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>
             A comprehensive set of tools, languages, and platforms I utilize to build modern digital solutions.
           </p>
           <div className={`w-16 h-1 mx-auto rounded-full ${
-            isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+            isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
           }`} />
         </div>
 
@@ -69,11 +69,11 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
             className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
               selectedFilter === 'All'
                 ? isDarkMode
-                  ? 'bg-[#B87333] text-white shadow-lg shadow-[#B87333]/20'
-                  : 'bg-[#4F83CC] text-white shadow-lg shadow-[#4F83CC]/20'
+                  ? 'bg-[#A41521] text-white shadow-lg shadow-[#A41521]/20'
+                  : 'bg-[#E63946] text-white shadow-lg shadow-[#E63946]/20'
                 : isDarkMode
-                ? 'bg-[#1F1F1F] border border-[#2F2F2F] text-[#D8D8D8] hover:text-white hover:bg-[#2F2F2F]'
-                : 'bg-[#F5F5F5] border border-[#D1D5DB] text-[#374151] hover:text-[#374151] hover:bg-[#FFFFFF]'
+                ? 'bg-[#2A2324] border border-[#4E494A] text-[#F4EDED] hover:text-white hover:bg-[#5A121D]/40'
+                : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#FFFFFF]'
             }`}
           >
             All Categories
@@ -85,11 +85,11 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                 selectedFilter === cat.title
                   ? isDarkMode
-                    ? 'bg-[#B87333] text-white shadow-lg shadow-[#B87333]/20'
-                    : 'bg-[#4F83CC] text-white shadow-lg shadow-[#4F83CC]/20'
+                    ? 'bg-[#A41521] text-white shadow-lg shadow-[#A41521]/20'
+                    : 'bg-[#E63946] text-white shadow-lg shadow-[#E63946]/20'
                   : isDarkMode
-                  ? 'bg-[#1F1F1F] border border-[#2F2F2F] text-[#D8D8D8] hover:text-white hover:bg-[#2F2F2F]'
-                  : 'bg-[#F5F5F5] border border-[#D1D5DB] text-[#374151] hover:text-[#374151] hover:bg-[#FFFFFF]'
+                  ? 'bg-[#2A2324] border border-[#4E494A] text-[#F4EDED] hover:text-white hover:bg-[#5A121D]/40'
+                  : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#FFFFFF]'
               }`}
             >
               {cat.title}
@@ -102,23 +102,23 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
           {categoriesToDisplay.map((cat) => (
             <div
               key={cat.title}
-              className={`p-6 rounded-2xl glass-card border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group flex flex-col justify-between ${
+              className={`p-6 rounded-2xl glass-card border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl flex flex-col justify-between group ${
                 isDarkMode
-                  ? 'bg-[#1F1F1F] border-[#2F2F2F] hover:border-[#B87333]/50'
-                  : 'bg-[#F5F5F5] border-[#D1D5DB] hover:border-[#4F83CC]/50'
+                  ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/50'
+                  : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/50'
               }`}
             >
               <div className="space-y-4">
                 {/* Category Header */}
                 <div className={`flex items-center gap-3 pb-3 border-b ${
-                  isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'
+                  isDarkMode ? 'border-[#4E494A]' : 'border-[#E8E8E8]'
                 }`}>
                   <div className={`p-2.5 rounded-xl group-hover:scale-110 transition-transform duration-300 ${
-                    isDarkMode ? 'bg-[#111111] text-[#B87333]' : 'bg-[#FFFFFF] text-[#4F83CC]'
+                    isDarkMode ? 'bg-[#111111] text-[#D51C29]' : 'bg-[#F8F8F8] text-[#E63946]'
                   }`}>
                     {ICON_MAP[cat.iconName] || <Code className="w-5 h-5" />}
                   </div>
-                  <h3 className={`font-bold text-base ${isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'}`}>
+                  <h3 className={`font-bold text-base ${isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}`}>
                     {cat.title}
                   </h3>
                 </div>
@@ -128,14 +128,14 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
                   {cat.skills.map((skill) => (
                     <div
                       key={skill}
-                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-default group/badge hover:scale-105 ${
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-default group/badge hover:scale-105 shadow-sm ${
                         isDarkMode
-                          ? 'bg-[#111111] border border-[#2F2F2F] text-[#D8D8D8] hover:border-[#B87333]/60 hover:text-white'
-                          : 'bg-[#FFFFFF] border border-[#D1D5DB] text-[#374151] hover:border-[#4F83CC]/60 hover:text-[#4F83CC]'
+                          ? 'bg-[#111111] border border-[#4E494A] text-[#F4EDED] hover:border-[#D51C29]/60 hover:text-white'
+                          : 'bg-[#F8F8F8] border border-[#E8E8E8] text-[#1A1A1A] hover:border-[#E63946]/60 hover:text-[#E63946]'
                       }`}
                     >
                       <Check className={`w-3 h-3 group-hover/badge:scale-125 transition-transform ${
-                        isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                        isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
                       }`} />
                       <span>{skill}</span>
                     </div>
@@ -144,10 +144,10 @@ export const Skills: React.FC<SkillsProps> = ({ isDarkMode }) => {
               </div>
 
               <div className={`mt-6 pt-3 border-t text-[10px] flex justify-between items-center font-mono ${
-                isDarkMode ? 'border-[#2F2F2F] text-[#A3A3A3]' : 'border-[#D1D5DB] text-[#6B7280]'
+                isDarkMode ? 'border-[#4E494A] text-[#A35B62]' : 'border-[#E8E8E8] text-[#5F6368]'
               }`}>
                 <span>{cat.skills.length} skills</span>
-                <span className={`font-bold ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`}>• Verified</span>
+                <span className={`font-bold ${isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}`}>• Verified</span>
               </div>
             </div>
           ))}

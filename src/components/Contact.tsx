@@ -34,7 +34,7 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
       
       {/* Background Glow */}
       <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 rounded-full blur-3xl pointer-events-none opacity-10 ${
-        isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+        isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
       }`} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -42,23 +42,23 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase glass-card border ${
-            isDarkMode ? 'text-[#B87333] border-[#B87333]/30' : 'text-[#4F83CC] border-[#4F83CC]/30'
+            isDarkMode ? 'text-[#D51C29] border-[#4E494A]' : 'text-[#E63946] border-[#E8E8E8]'
           }`}>
             <Sparkles className="w-3.5 h-3.5" />
             Get In Touch
           </div>
           <h2 className={`text-3xl sm:text-5xl font-extrabold tracking-tight ${
-            isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
+            isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
           }`}>
-            Let's Build Something <span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>Amazing Together</span>
+            Let's Build Something <span className={isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}>Amazing Together</span>
           </h2>
           <p className={`text-base sm:text-lg leading-relaxed ${
-            isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'
+            isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'
           }`}>
             I'm currently available for freelance projects, full-time opportunities, and collaborations. Feel free to reach out via email or phone—I look forward to hearing from you.
           </p>
           <div className={`w-20 h-1.5 mx-auto rounded-full ${
-            isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+            isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
           }`} />
         </div>
 
@@ -66,22 +66,22 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
           
           {/* Card 1: Phone */}
-          <div className={`p-8 rounded-3xl glass-card border transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between group ${
+          <div className={`p-8 rounded-3xl glass-card border flex flex-col justify-between h-full group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
             isDarkMode
-              ? 'bg-[#1F1F1F] border-[#2F2F2F] hover:border-[#B87333]/40'
-              : 'bg-[#F5F5F5] border-[#D1D5DB] hover:border-[#4F83CC]/40'
+              ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/40'
+              : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/40'
           }`}>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className={`p-3.5 rounded-2xl group-hover:scale-110 transition-transform ${
-                  isDarkMode ? 'bg-[#B87333]/10 text-[#B87333]' : 'bg-[#4F83CC]/10 text-[#4F83CC]'
+                  isDarkMode ? 'bg-[#A41521]/15 text-[#D51C29]' : 'bg-[#FFD6DB] text-[#E63946]'
                 }`}>
                   <Phone className="w-6 h-6" />
                 </div>
                 <button
                   onClick={() => handleCopy(PERSONAL_INFO.phone, 'phone')}
                   className={`p-2 rounded-xl transition-colors cursor-pointer ${
-                    isDarkMode ? 'text-[#A3A3A3] hover:text-white hover:bg-[#2F2F2F]' : 'text-[#6B7280] hover:text-[#374151] hover:bg-[#FFFFFF]'
+                    isDarkMode ? 'text-[#A35B62] hover:text-[#F4EDED] hover:bg-[#4E494A]' : 'text-[#5F6368] hover:text-[#1A1A1A] hover:bg-[#F8F8F8]'
                   }`}
                   title="Copy Phone Number"
                 >
@@ -90,11 +90,11 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
 
               <div>
-                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>Phone</p>
+                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>Phone</p>
                 <a
                   href={`tel:${PERSONAL_INFO.phoneClean}`}
                   className={`text-xl font-extrabold block mt-1 transition-colors ${
-                    isDarkMode ? 'text-[#FAFAFA] hover:text-[#B87333]' : 'text-[#374151] hover:text-[#4F83CC]'
+                    isDarkMode ? 'text-[#F4EDED] hover:text-[#D51C29]' : 'text-[#1A1A1A] hover:text-[#E63946]'
                   }`}
                 >
                   {PERSONAL_INFO.phone}
@@ -102,11 +102,11 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'}`}>
+            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#4E494A]' : 'border-[#E8E8E8]'}`}>
               <a
                 href={`tel:${PERSONAL_INFO.phoneClean}`}
                 className={`text-xs font-bold hover:underline flex items-center gap-1.5 ${
-                  isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
                 }`}
               >
                 Direct Call Available
@@ -116,22 +116,22 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Card 2: Email */}
-          <div className={`p-8 rounded-3xl glass-card border transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between group ${
+          <div className={`p-8 rounded-3xl glass-card border flex flex-col justify-between h-full group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
             isDarkMode
-              ? 'bg-[#1F1F1F] border-[#2F2F2F] hover:border-[#B87333]/40'
-              : 'bg-[#F5F5F5] border-[#D1D5DB] hover:border-[#4F83CC]/40'
+              ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/40'
+              : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/40'
           }`}>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className={`p-3.5 rounded-2xl group-hover:scale-110 transition-transform ${
-                  isDarkMode ? 'bg-[#B87333]/10 text-[#B87333]' : 'bg-[#4F83CC]/10 text-[#4F83CC]'
+                  isDarkMode ? 'bg-[#A41521]/15 text-[#D51C29]' : 'bg-[#FFD6DB] text-[#E63946]'
                 }`}>
                   <Mail className="w-6 h-6" />
                 </div>
                 <button
                   onClick={() => handleCopy(PERSONAL_INFO.email, 'email')}
                   className={`p-2 rounded-xl transition-colors cursor-pointer ${
-                    isDarkMode ? 'text-[#A3A3A3] hover:text-white hover:bg-[#2F2F2F]' : 'text-[#6B7280] hover:text-[#374151] hover:bg-[#FFFFFF]'
+                    isDarkMode ? 'text-[#A35B62] hover:text-[#F4EDED] hover:bg-[#4E494A]' : 'text-[#5F6368] hover:text-[#1A1A1A] hover:bg-[#F8F8F8]'
                   }`}
                   title="Copy Email Address"
                 >
@@ -140,12 +140,12 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
 
               <div>
-                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>Email</p>
+                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>Email</p>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
                   onClick={handleEmailClick}
                   className={`text-lg sm:text-xl font-extrabold block text-left mt-1 transition-colors break-all cursor-pointer ${
-                    isDarkMode ? 'text-[#FAFAFA] hover:text-[#B87333]' : 'text-[#374151] hover:text-[#4F83CC]'
+                    isDarkMode ? 'text-[#F4EDED] hover:text-[#D51C29]' : 'text-[#1A1A1A] hover:text-[#E63946]'
                   }`}
                 >
                   {PERSONAL_INFO.email}
@@ -153,12 +153,12 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
             </div>
 
-            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'}`}>
+            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#4E494A]' : 'border-[#E8E8E8]'}`}>
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
                 onClick={handleEmailClick}
                 className={`text-xs font-bold hover:underline flex items-center gap-1.5 cursor-pointer ${
-                  isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
                 }`}
               >
                 Send Direct Email
@@ -168,15 +168,15 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
           </div>
 
           {/* Card 3: Location */}
-          <div className={`p-8 rounded-3xl glass-card border transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between group ${
+          <div className={`p-8 rounded-3xl glass-card border flex flex-col justify-between h-full group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
             isDarkMode
-              ? 'bg-[#1F1F1F] border-[#2F2F2F] hover:border-[#B87333]/40'
-              : 'bg-[#F5F5F5] border-[#D1D5DB] hover:border-[#4F83CC]/40'
+              ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/40'
+              : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/40'
           }`}>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className={`p-3.5 rounded-2xl group-hover:scale-110 transition-transform ${
-                  isDarkMode ? 'bg-[#B87333]/10 text-[#B87333]' : 'bg-[#4F83CC]/10 text-[#4F83CC]'
+                  isDarkMode ? 'bg-[#A41521]/15 text-[#D51C29]' : 'bg-[#FFD6DB] text-[#E63946]'
                 }`}>
                   <MapPin className="w-6 h-6" />
                 </div>
@@ -186,17 +186,17 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
               </div>
 
               <div>
-                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>Location</p>
+                <p className={`text-xs uppercase tracking-wider font-bold ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>Location</p>
                 <p className={`text-xl font-extrabold mt-1 ${
-                  isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
+                  isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
                 }`}>
                   {PERSONAL_INFO.location}
                 </p>
               </div>
             </div>
 
-            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#2F2F2F]' : 'border-[#D1D5DB]'}`}>
-              <span className={`text-xs font-medium ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>
+            <div className={`pt-6 mt-6 border-t ${isDarkMode ? 'border-[#4E494A]' : 'border-[#E8E8E8]'}`}>
+              <span className={`text-xs font-medium ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>
                 Remote & On-Site Availability
               </span>
             </div>
@@ -211,8 +211,8 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
             onClick={handleEmailClick}
             className={`flex-1 min-w-[200px] px-8 py-4 rounded-2xl font-bold text-sm text-white shadow-xl flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all cursor-pointer ${
               isDarkMode
-                ? 'bg-[#B87333] hover:bg-[#D48C48] shadow-[#B87333]/25'
-                : 'bg-[#4F83CC] hover:bg-[#3B6BB0] shadow-[#4F83CC]/25'
+                ? 'bg-[#A41521] hover:bg-[#D51C29] shadow-[#A41521]/25'
+                : 'bg-[#E63946] hover:bg-[#C92A3C] shadow-[#E63946]/25'
             }`}
           >
             <Send className="w-4 h-4" />
@@ -223,11 +223,11 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
             href={`tel:${PERSONAL_INFO.phoneClean}`}
             className={`flex-1 min-w-[200px] px-8 py-4 rounded-2xl font-bold text-sm border flex items-center justify-center gap-2 hover:-translate-y-0.5 transition-all cursor-pointer ${
               isDarkMode
-                ? 'bg-[#1F1F1F] border-[#2F2F2F] text-[#FAFAFA] hover:bg-[#2F2F2F] shadow-lg'
-                : 'bg-[#F5F5F5] border-[#D1D5DB] text-[#374151] hover:bg-[#FFFFFF] shadow-lg'
+                ? 'bg-[#2A2324] border-[#4E494A] text-[#F4EDED] hover:bg-[#4E494A] shadow-lg'
+                : 'bg-[#FFFFFF] border-[#E8E8E8] text-[#1A1A1A] hover:bg-[#F8F8F8] shadow-lg'
             }`}
           >
-            <PhoneCall className={`w-4 h-4 ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`} />
+            <PhoneCall className={`w-4 h-4 ${isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}`} />
             Call Me
           </a>
         </div>
@@ -235,7 +235,7 @@ export const Contact: React.FC<ContactProps> = ({ isDarkMode }) => {
         {/* Copy Confirmation Toast */}
         {(copiedType || toastMessage) && (
           <div className={`fixed bottom-8 right-8 z-50 px-5 py-3 rounded-2xl text-white font-bold text-xs shadow-2xl flex items-center gap-2 animate-bounce ${
-            isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+            isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
           }`}>
             <Check className="w-4 h-4" />
             {toastMessage || `Copied ${copiedType === 'email' ? 'Email Address' : 'Phone Number'} to clipboard!`}

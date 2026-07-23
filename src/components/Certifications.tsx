@@ -16,21 +16,21 @@ export const Certifications: React.FC<CertificationsProps> = ({ isDarkMode }) =>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase glass-card border ${
-            isDarkMode ? 'text-[#B87333] border-[#B87333]/30' : 'text-[#4F83CC] border-[#4F83CC]/30'
+            isDarkMode ? 'text-[#D51C29] border-[#4E494A]' : 'text-[#E63946] border-[#E8E8E8]'
           }`}>
             <Award className="w-3.5 h-3.5" />
             Verified Credentials
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-            isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
+            isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
           }`}>
-            Professional <span className={isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}>Certifications</span>
+            Professional <span className={isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}>Certifications</span>
           </h2>
-          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#A3A3A3]' : 'text-[#6B7280]'}`}>
+          <p className={`text-sm sm:text-base ${isDarkMode ? 'text-[#A35B62]' : 'text-[#5F6368]'}`}>
             Accredited credentials certified by government and industry skill boards.
           </p>
           <div className={`w-16 h-1 mx-auto rounded-full ${
-            isDarkMode ? 'bg-[#B87333]' : 'bg-[#4F83CC]'
+            isDarkMode ? 'bg-[#A41521]' : 'bg-[#E63946]'
           }`} />
         </div>
 
@@ -39,15 +39,15 @@ export const Certifications: React.FC<CertificationsProps> = ({ isDarkMode }) =>
           {CERTIFICATIONS.map((cert) => (
             <div
               key={cert.id}
-              className={`p-8 rounded-3xl glass-card border transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between group relative overflow-hidden ${
+              className={`p-8 rounded-3xl glass-card border flex flex-col justify-between h-full group relative overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
                 isDarkMode
-                  ? 'bg-[#1F1F1F] border-[#2F2F2F] hover:border-[#B87333]/40'
-                  : 'bg-[#FFFFFF] border-[#D1D5DB] hover:border-[#4F83CC]/40'
+                  ? 'bg-[#2A2324] border-[#4E494A] hover:border-[#D51C29]/40'
+                  : 'bg-[#FFFFFF] border-[#E8E8E8] hover:border-[#E63946]/40'
               }`}
             >
               {/* Background Accent Badge Watermark */}
               <div className={`absolute -right-6 -bottom-6 pointer-events-none group-hover:scale-125 transition-transform duration-500 opacity-5 ${
-                isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
               }`}>
                 <Award className="w-48 h-48" />
               </div>
@@ -56,8 +56,8 @@ export const Certifications: React.FC<CertificationsProps> = ({ isDarkMode }) =>
                 <div className="flex items-center justify-between">
                   <span className={`px-3 py-1 rounded-full text-xs font-bold border ${
                     isDarkMode
-                      ? 'bg-[#B87333]/20 text-[#D8D8D8] border-[#B87333]/30'
-                      : 'bg-[#4F83CC]/20 text-[#374151] border-[#4F83CC]/30'
+                      ? 'bg-[#5A121D]/40 text-[#F4EDED] border-[#A41521]/40'
+                      : 'bg-[#FFD6DB] text-[#1A1A1A] border-[#E63946]/30'
                   }`}>
                     {cert.badgeText}
                   </span>
@@ -67,12 +67,12 @@ export const Certifications: React.FC<CertificationsProps> = ({ isDarkMode }) =>
                   </div>
                 </div>
 
-                <h3 className={`text-xl font-extrabold tracking-tight ${isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'}`}>
+                <h3 className={`text-xl font-extrabold tracking-tight ${isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'}`}>
                   {cert.title}
                 </h3>
 
                 <p className={`text-sm font-bold flex items-center gap-2 ${
-                  isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
                 }`}>
                   <Award className="w-4 h-4" />
                   Issuing Authority: {cert.issuer}
@@ -80,13 +80,13 @@ export const Certifications: React.FC<CertificationsProps> = ({ isDarkMode }) =>
               </div>
 
               <div className={`pt-6 mt-6 border-t flex items-center justify-between text-xs relative z-10 ${
-                isDarkMode ? 'border-[#2F2F2F] text-[#A3A3A3]' : 'border-[#D1D5DB] text-[#6B7280]'
+                isDarkMode ? 'border-[#4E494A] text-[#A35B62]' : 'border-[#E8E8E8] text-[#5F6368]'
               }`}>
                 <span className="flex items-center gap-1">
                   <CheckCircle2 className="w-4 h-4 text-emerald-500" />
                   Skill Standards Certified
                 </span>
-                <span className={`font-mono font-bold ${isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'}`}>TESDA Accredited</span>
+                <span className={`font-mono font-bold ${isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'}`}>TESDA Accredited</span>
               </div>
             </div>
           ))}

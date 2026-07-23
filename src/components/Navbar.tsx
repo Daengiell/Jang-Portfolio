@@ -49,8 +49,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? isDarkMode
-            ? 'glass-nav bg-[#111111]/90 backdrop-blur-md border-b border-[#1F1F1F] py-3 shadow-xl shadow-black/50'
-            : 'glass-nav bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#D1D5DB] py-3 shadow-md'
+            ? 'glass-nav bg-[#111111]/90 backdrop-blur-md border-b border-[#4E494A] py-3 shadow-xl shadow-black/50'
+            : 'glass-nav bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E8E8E8] py-3 shadow-md'
           : 'bg-transparent py-5'
       }`}
     >
@@ -64,25 +64,25 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <div className={`w-10 h-10 rounded-xl p-[1px] shadow-md transition-all duration-300 ${
               isDarkMode
-                ? 'bg-gradient-to-tr from-[#B87333] via-[#D8D8D8] to-[#B87333] shadow-[#B87333]/20'
-                : 'bg-gradient-to-tr from-[#4F83CC] via-[#374151] to-[#4F83CC] shadow-[#4F83CC]/20'
+                ? 'bg-gradient-to-tr from-[#A41521] via-[#D51C29] to-[#5A121D] shadow-[#A41521]/20'
+                : 'bg-gradient-to-tr from-[#E63946] via-[#C92A3C] to-[#E63946] shadow-[#E63946]/20'
             }`}>
               <div className={`w-full h-full rounded-[11px] flex items-center justify-center font-bold text-sm ${
-                isDarkMode ? 'bg-[#111111] text-[#FAFAFA]' : 'bg-[#FFFFFF] text-[#374151]'
+                isDarkMode ? 'bg-[#111111] text-[#F4EDED]' : 'bg-[#FFFFFF] text-[#1A1A1A]'
               }`}>
                 <Code2 className={`w-5 h-5 group-hover:scale-110 transition-transform duration-300 ${
-                  isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                  isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
                 }`} />
               </div>
             </div>
             <div className="flex flex-col">
               <span className={`font-bold tracking-tight text-base sm:text-lg leading-tight transition-colors ${
-                isDarkMode ? 'text-[#FAFAFA]' : 'text-[#374151]'
+                isDarkMode ? 'text-[#F4EDED]' : 'text-[#1A1A1A]'
               }`}>
                 {PERSONAL_INFO.name}
               </span>
               <span className={`text-xs font-medium tracking-wide ${
-                isDarkMode ? 'text-[#B87333]' : 'text-[#4F83CC]'
+                isDarkMode ? 'text-[#D51C29]' : 'text-[#E63946]'
               }`}>
                 Full Stack & WordPress
               </span>
@@ -92,8 +92,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Desktop Nav Items */}
           <nav className={`hidden lg:flex items-center gap-1 p-1.5 rounded-full border backdrop-blur-md shadow-inner transition-colors ${
             isDarkMode
-              ? 'bg-[#1F1F1F]/80 border-[#2F2F2F]'
-              : 'bg-[#F5F5F5] border-[#D1D5DB]'
+              ? 'bg-[#2A2324]/80 border-[#4E494A]'
+              : 'bg-[#F8F8F8] border-[#E8E8E8]'
           }`}>
             {NAV_ITEMS.map((item) => {
               const id = item.href.replace('#', '');
@@ -106,11 +106,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className={`px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 relative whitespace-nowrap ${
                     isActive
                       ? isDarkMode
-                        ? 'text-white bg-[#B87333] font-bold shadow-md shadow-[#B87333]/30'
-                        : 'text-white bg-[#4F83CC] font-bold shadow-md shadow-[#4F83CC]/30'
+                        ? 'text-[#F4EDED] bg-[#A41521] font-bold shadow-md shadow-[#A41521]/30'
+                        : 'text-white bg-[#E63946] font-bold shadow-md shadow-[#E63946]/30'
                       : isDarkMode
-                      ? 'text-[#A3A3A3] hover:text-[#FAFAFA] hover:bg-[#111111]'
-                      : 'text-[#6B7280] hover:text-[#374151] hover:bg-[#FFFFFF]'
+                      ? 'text-[#A35B62] hover:text-[#F4EDED] hover:bg-[#111111]'
+                      : 'text-[#5F6368] hover:text-[#1A1A1A] hover:bg-[#FFFFFF]'
                   }`}
                 >
                   {item.label}
@@ -127,11 +127,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Toggle Theme"
               className={`p-2.5 rounded-xl transition-all duration-300 border ${
                 isDarkMode
-                  ? 'bg-[#1F1F1F] border-[#2F2F2F] text-[#B87333] hover:bg-[#111111] hover:border-[#B87333]/40 shadow-inner'
-                  : 'bg-[#F5F5F5] border-[#D1D5DB] text-[#4F83CC] hover:bg-[#FFFFFF] hover:border-[#4F83CC]/40 shadow-inner'
+                  ? 'bg-[#2A2324] border-[#4E494A] text-[#D51C29] hover:bg-[#111111] hover:border-[#D51C29]/40 shadow-inner'
+                  : 'bg-[#F8F8F8] border-[#E8E8E8] text-[#E63946] hover:bg-[#FFFFFF] hover:border-[#E63946]/40 shadow-inner'
               }`}
             >
-              {isDarkMode ? <Sun className="w-4 h-4 text-[#B87333]" /> : <Moon className="w-4 h-4 text-[#4F83CC]" />}
+              {isDarkMode ? <Sun className="w-4 h-4 text-[#D51C29]" /> : <Moon className="w-4 h-4 text-[#E63946]" />}
             </button>
 
             {/* Mobile Hamburger Button */}
@@ -140,8 +140,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               aria-label="Toggle Menu"
               className={`lg:hidden p-2.5 rounded-xl border transition-all ${
                 isDarkMode
-                  ? 'bg-[#1F1F1F] border-[#2F2F2F] text-[#FAFAFA]'
-                  : 'bg-[#F5F5F5] border-[#D1D5DB] text-[#374151]'
+                  ? 'bg-[#2A2324] border-[#4E494A] text-[#F4EDED]'
+                  : 'bg-[#F8F8F8] border-[#E8E8E8] text-[#1A1A1A]'
               }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -154,8 +154,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div className={`lg:hidden border-b shadow-2xl transition-all duration-300 ${
           isDarkMode
-            ? 'bg-[#111111]/95 border-[#2F2F2F] text-[#FAFAFA]'
-            : 'bg-[#FFFFFF]/95 border-[#D1D5DB] text-[#374151]'
+            ? 'bg-[#111111]/95 border-[#4E494A] text-[#F4EDED]'
+            : 'bg-[#FFFFFF]/95 border-[#E8E8E8] text-[#1A1A1A]'
         }`}>
           <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
             {NAV_ITEMS.map((item) => {
@@ -169,11 +169,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className={`block px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
                     isActive
                       ? isDarkMode
-                        ? 'bg-[#B87333] text-white font-bold'
-                        : 'bg-[#4F83CC] text-white font-bold'
+                        ? 'bg-[#A41521] text-white font-bold'
+                        : 'bg-[#E63946] text-white font-bold'
                       : isDarkMode
-                      ? 'text-[#A3A3A3] hover:bg-[#1F1F1F] hover:text-[#FAFAFA]'
-                      : 'text-[#6B7280] hover:bg-[#F5F5F5] hover:text-[#374151]'
+                      ? 'text-[#A35B62] hover:bg-[#2A2324] hover:text-[#F4EDED]'
+                      : 'text-[#5F6368] hover:bg-[#F8F8F8] hover:text-[#1A1A1A]'
                   }`}
                 >
                   {item.label}
